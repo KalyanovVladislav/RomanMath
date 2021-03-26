@@ -17,7 +17,7 @@ namespace RomanMath.Impl
             "M","D","C","L","X","V","I"
         };
 
-        //contains allowed щзукфещк
+        //contains allowed operators
         private static readonly string[] AVAILABLE_OPERATORS =
 {
             "+","-","*"
