@@ -20,7 +20,7 @@ namespace RomanMath.Impl
         //contains allowed щзукфещк
         private static readonly string[] AVAILABLE_OPERATORS =
 {
-            "+","-","/"
+            "+","-","*"
         };
 
         //contstains possible roman numerals

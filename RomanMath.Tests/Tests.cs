@@ -14,8 +14,8 @@ namespace RomanMath.Tests
 		[Test]
 		public void Test1()
 		{
-			var result = Service.Evaluate("IV+II/V");
-			Assert.AreEqual(4, result);
+			var result = Service.Evaluate("IV+II*V");
+			Assert.AreEqual(14, result);
 		}
 		[Test]
 		public void NullExpressionTest()
@@ -25,7 +25,7 @@ namespace RomanMath.Tests
 		[Test]
 		public void InvalidOperatorsTest()
 		{
-			Assert.Throws<ArgumentException>(() => Service.Evaluate("I*V"));
+			Assert.Throws<ArgumentException>(() => Service.Evaluate("I/V"));
 		}
 		[Test]
 		public void InvalidLettersTest()
@@ -35,22 +35,22 @@ namespace RomanMath.Tests
 		[Test]
 		public void NotAllowedCharactersTest()
 		{
-			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV+II/V="));
+			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV+II*V="));
 		}
 		[Test]
 		public void WhitespacesTest()
 		{
-			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV + II       / V"));
+			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV + II       * V"));
 		}
 		[Test]
 		public void MultylineExpressionTest()
 		{
-			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV + II\n/ V"));
+			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV+II\n*V"));
 		}
 		[Test]
 		public void InvalidExpressionTest()
 		{
-			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV++II/V"));
+			Assert.Throws<ArgumentException>(() => Service.Evaluate("IV++II*V"));
 		}
 	}
 }
